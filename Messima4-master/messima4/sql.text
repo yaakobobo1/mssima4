@@ -1,0 +1,7 @@
+    create table
+    CREATE TABLE family ( personID int NOT NULL AUTO_INCREMENT, name varchar(255), nickname varchar(255), description varchar(255), PRIMARY KEY (personid) )
+
+join
+SELECT tasks.`taskID`, tasks.`description`, tasks.`finishDate`, tasks.`familyID`, family.personID FROM tasks INNER JOIN family ON tasks.description = family.description
+
+SELECT tasks.`taskID`, tasks.`description`, tasks.`finishDate`, tasks.`familyID`, family.personID FROM tasks INNER JOIN family ON tasks.`familyID` = family.personID

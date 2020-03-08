@@ -1,0 +1,12 @@
+<h1>Add Task</h1>
+
+<form [formGroup]='newTask' (ngSubmit)='addNewTask()' >
+    <input type="text" placeholder="Description of task" formControlName='description' /> <br>
+    <input type="date" placeholder="Finish Date" formControlName='finishDate' /> <br>
+    <select formControlName='familyID'>
+        <option *ngFor='let family of allFamily'  [value]="family.personID" >{{family.name}}</option>
+    </select>
+    <input type="submit" value='add' /> 
+</form>
+
+{{newTask.value |json}}
